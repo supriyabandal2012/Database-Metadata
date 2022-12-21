@@ -1,0 +1,24 @@
+(base) supriyabandal@supriyas-MacBook-Air DBMS657_PA4 % python Main.py
+CREATE DATABASE CS457_PA4;
+Database cs457_pa4 created.
+USE CS457_PA4;
+Using database cs457_pa4.
+create table Flights (seat int, status int);
+Table flights created.
+insert into Flights values (22,0); -- seat 22 is available
+1 new record inserted.
+insert into Flights values (23,1); -- seat 23 is occupied
+1 new record inserted.
+begin transaction;
+Transaction starts.
+update flights set status = 1 where seat = 22;
+1 record modified.
+commit; --persist the change to disk
+select * from Flights;Transaction committed.
+
+
+
+
+
+
+

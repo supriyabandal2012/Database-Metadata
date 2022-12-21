@@ -1,0 +1,25 @@
+(base) supriyabandal@supriyas-MacBook-Air DBMS657_PA4 % python Main.py
+USE CS457_PA4;
+Using database cs457_pa4.
+select * from Flights;
+seat int | status int 
+22 | 0 
+23 | 1 
+
+begin transaction;
+Transaction starts.
+update flights set status = 1 where seat = 22;
+Error: Table flights is locked!
+commit; --there should be nothing to commit; it's an "abort"
+Transaction abort.
+select * from Flights;
+seat int | status int 
+22 | 0 
+23 | 1 
+
+select * from Flights;
+seat int | status int 
+22 | 1 
+23 | 1 
+
+
